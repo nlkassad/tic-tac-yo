@@ -7,61 +7,70 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
       <div class="authentication">
         <h1>API Token Auth</h1>
-          <form id="sign-up">
-            <fieldset>
-              <legend>Sign up!</legend>
-              <input type="email" name="credentials[email]" placeholder="Enter your email">
-              <input type="password" name="credentials[password]" placeholder="Enter your password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
-              <input type="submit" name="submit" value="Sign up!">
-            </fieldset>
-          </form>
-          <form id="sign-in">
-            <fieldset>
-              <legend>Sign in!</legend>
-              <input type="email" name="credentials[email]" placeholder="Enter your email">
-              <input type="password" name="credentials[password]" placeholder="Enter your password">
-              <input type="submit" name="submit" value="Sign in!">
-            </fieldset>
-          </form>
-          <form id="change-password">
-            <fieldset>
-              <legend>Change password</legend>
-              <input type="password" name="passwords[old]" placeholder="Enter your old password">
-              <input type="password" name="passwords[new]" placeholder="Enter your new password">
-              <input type="submit" name="submit" value="Change Password">
-            </fieldset>
-          </form>
-          <form id="get-users">
-            <fieldset>
-              <legend>Get Users</legend>
-              <input type="submit" name="submit" value="Get Users">
-            </fieldset>
-          </form>
-          <form id="get-user">
-            <fieldset>
-              <legend>Get User</legend>
-              <input type="text" name="getUser[id]" id="user-id" placeholder="Enter the user id">
-              <input type="submit" name="submit" value="Get User">
-            </fieldset>
-          </form>
-          <form id="sign-out">
-            <fieldset>
-              <legend>Sign Out</legend>
-              <input type="submit" name="submit" value="Sign Out">
-            </fieldset>
-          </form>
+        <div class="logged-out">
+          <div class="col-xs-12 sign-up">
+            <form id="sign-up">
+              <fieldset>
+                <legend>Sign up!</legend>
+                <input type="email" name="credentials[email]" placeholder="Enter your email">
+                <input type="password" name="credentials[password]" placeholder="Enter your password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
+                <input type="submit" name="submit" value="Sign up!">
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-xs-12">
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign in!</legend>
+                <input type="email" name="credentials[email]" placeholder="Enter your email">
+                <input type="password" name="credentials[password]" placeholder="Enter your password">
+                <input type="submit" name="submit" value="Sign in!">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="logged-in hide">
+          <div class="col-xs-12">
+            <form id="sign-out">
+              <fieldset>
+                <legend>Sign Out</legend>
+                <input type="submit" name="submit" value="Sign Out">
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-xs-12">
+            <form id="change-password">
+              <fieldset>
+                <legend>Change password</legend>
+                <input type="password" name="passwords[old]" placeholder="Enter your old password">
+                <input type="password" name="passwords[new]" placeholder="Enter your new password">
+                <input type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="admin">
+          <div class="col-xs-12">
+            <form id="get-users">
+              <fieldset>
+                <legend>Get Users</legend>
+                <input type="submit" name="submit" value="Get Users">
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-xs-12">
+            <form id="get-user">
+              <fieldset>
+                <legend>Get User</legend>
+                <input type="text" name="getUser[id]" id="user-id" placeholder="Enter the user id">
+                <input type="submit" name="submit" value="Get User">
+              </fieldset>
+            </form>
+          </div>
+        </div>
       </div>
     </body>
 </html>

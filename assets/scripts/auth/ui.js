@@ -2,8 +2,14 @@
 
 const app = require('../app');
 
+
 const signInSuccess = (data) => {
   app.user = data.user;
+//  data.credentials = null;
+  $(".logged-in").toggleClass("hide, show");
+  $(".logged-out").toggleClass("show, hide");
+  console.log(data);
+  document.getElementById("sign-in").reset();
 //  debugger;
 };
 
@@ -20,8 +26,14 @@ const getUserSuccess = (data) => {
 };
 
 const signOutSuccess = () => {
+  console.log();
+  $(".logged-in").toggleClass("hide, show");
+  $(".logged-out").toggleClass("show, hide");
+//  document.find(".logged-in").toggle();
+//  document.find(".logged-out").toggle();
   app.user = null;
-  console.log("Password changed success");
+
+//  console.log("Password changed success");
 };
 
 const success = (data) => {
@@ -31,6 +43,8 @@ const success = (data) => {
 const failure = (error) => {
   console.error(error);
 };
+
+
 
 module.exports = {
   signInSuccess,
