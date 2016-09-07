@@ -1,15 +1,42 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// .logged-in {
-//   display: none;
-// }
-//
-// .logged-out {
-//   visibility: visible;
-// }
 
 .hide {display: none;
 }
 .show {display: visible;
+}
+
+
+.square {
+  border: 5px solid red;
+  height: 50vw;
+  text-align: center;
+  width: 50vw;
+  }
+
+// .grid {}
+//
+// .grid::before,
+// .grid::after {
+//   clear: both;
+//   content: '';
+//   display: block;
+// }
+.outer-grid {
+  height: 75vw;
+  margin: 0 auto;
+  text-align: center;
+  width: 75vw;
+}
+
+.grid-item {
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 0;
+  float: left;
+  height: 25vw;
+  text-align: center;
+  font-size: 20vw;
+  width: 25vw;
 }
