@@ -1,2 +1,60 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// .box {
+//   position: relative;
+//   width: 50%;		//* desired width */
+// }
+//
+// .box::before {
+//   content: '';
+//   display: block;
+//   padding-top: 100%; 	//* initial ratio of 1:1*/
+// }
+//
+// .content {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+// }
+
+.square {
+  border: 5px solid red;
+  height: 50vw;
+  text-align: center;
+  width: 50vw;
+  }
+
+// .grid {}
+//
+// .grid::before,
+// .grid::after {
+//   clear: both;
+//   content: '';
+//   display: block;
+// }
+.outer-grid {
+  height: 75vw;
+  margin: 0 auto;
+  text-align: center;
+  width: 75vw;
+}
+
+.grid-item {
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 0;
+  float: left;
+  height: 25vw;
+  text-align: center;
+  font-size: 20vw;
+  width: 25vw;
+}
+
+// @for $i from 1 through 9 {
+//   .grid-item:nth-child(#{$i}) {
+//     background-color: hsl(360 / 72 * $i, 100%, 60%);
+//   }
+// }
