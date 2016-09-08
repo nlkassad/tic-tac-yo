@@ -4,14 +4,22 @@ const api = require('./api');
 const ui = require('./ui');
 const variables = require('./variables');
 
+const isEmpty = function (element) {
+  return $(element).is(':empty');
+};
 
+const addHtmlPlayerMarker = function (target) {
+  return $(target).html(variables.playerMarker);
+};
 
 const onSelectStart = function (event) {
   event.preventDefault();
-  if (variables.playerMarker === null) {
+  let marker = variables.playerMarker;
+  if (marker === null) {
     variables.playerMarker = "X";
-    $(".player").html(variables.startingPlayer);
-    console.log(variables.startingPlayer);
+    addHtmlPlayerMarker(".player");
+//    $(".player").html(variables.startingPlayer);
+    console.log(marker);
   } else {
     console.log("Failure");
   }
@@ -25,20 +33,24 @@ const onSelectSquare = function (event) {
   event.preventDefault();
 //  let text = event.target.html;
   console.log(event.target.html);
-  let isX = variables.playerMarker === "X";
-  let isO = variables.playerMarker === "O";
-  let emptySquare = $(event.target).is(':empty');
-
+  let marker = variables.playerMarker;
+  let isX = marker === "X";
+  let isO = marker === "O";
+  let emptySquare = isEmpty(event.target);
 //  let div = event.target.id;
   if (isX && emptySquare) {
-    $(event.target).html(variables.playerMarker);
+    addHtmlPlayerMarker(event.target);
+//    $(event.target).html(variables.playerMarker);
     variables.playerMarker = "O";
-    $(".player").html(variables.playerMarker);
+    addHtmlPlayerMarker(".player");
+//    $(".player").html(variables.playerMarker);
     console.log(variables.playerMarker);
   } else if (isO && emptySquare) {
-    $(event.target).html(variables.playerMarker);
+    addHtmlPlayerMarker(event.target);
+//    $(event.target).html(variables.playerMarker);
     variables.playerMarker = "X";
-    $(".player").html(variables.playerMarker);
+    addHtmlPlayerMarker(".player");
+//    $(".player").html(variables.playerMarker);
     console.log(variables.playerMarker);
   } else {
     console.log("Failure");
