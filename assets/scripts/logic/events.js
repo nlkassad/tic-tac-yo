@@ -8,10 +8,10 @@ const variables = require('./variables');
 
 const onSelectStart = function (event) {
   event.preventDefault();
-  if (variables.player === null) {
-    variables.player = "Player: X";
-    $(".player").html(variables.player);
-    console.log(variables.player);
+  if (variables.playerMarker === null) {
+    variables.playerMarker = "X";
+    $(".player").html(variables.startingPlayer);
+    console.log(variables.startingPlayer);
   } else {
     console.log("Failure");
   }
@@ -23,6 +23,22 @@ const onSelectStart = function (event) {
 
 const onSelectSquare = function (event) {
   event.preventDefault();
+  $(event.target).html(variables.playerMarker);
+//  let div = event.target.id;
+  if (variables.playerMarker === "X") {
+    variables.playerMarker = "O";
+    $(".player").html(variables.playerMarker);
+
+    console.log(variables.playerMarker);
+  }
+  else if (variables.playerMarker === "O") {
+    variables.playerMarker = "X";
+    $(".player").html(variables.playerMarker);
+
+    console.log(variables.playerMarker);
+  } else {
+    console.log("Failure");
+  }
 
   // let div = event.target.id;
   // let marker = "x";
@@ -31,7 +47,7 @@ const onSelectSquare = function (event) {
   // $(event.target).html(marker);
   // $(".player").toggleClass("player-x player-o");
   // console.log(player);
-
+  //
   //  api.getUser(data)
   //    .done(ui.getUserSuccess)
   //    .fail(ui.failure);

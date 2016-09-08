@@ -9,6 +9,7 @@ const signInSuccess = (data) => {
   $(".logged-in").toggleClass("hide, show");
   $(".logged-out").toggleClass("show, hide");
   console.log(data);
+  console.log(app.user);
   document.getElementById("sign-in").reset();
 //  debugger;
 };
