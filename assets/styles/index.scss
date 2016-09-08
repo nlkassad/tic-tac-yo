@@ -7,13 +7,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .show {display: visible;
 }
 
+$red: #f00;
 
 .square {
-  border: 5px solid red;
+  border: 5px solid $red;
   height: 50vw;
   text-align: center;
   width: 50vw;
-  }
+}
 
 // .grid {}
 //
@@ -31,12 +32,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .grid-item {
-  border: 1px solid red;
+  border: 1px solid $red;
   margin: 0 auto;
   padding: 0;
   float: left;
   height: 25vw;
   text-align: center;
-  font-size: 20vw;
+  font-size: 10vw;
   width: 25vw;
 }

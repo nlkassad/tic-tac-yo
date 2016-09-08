@@ -8,7 +8,7 @@
     </head>
     <body class="container-fluid">
       <div class="authentication">
-        <h1>API Token Auth</h1>
+        <!-- <h1>API Token Auth</h1> -->
         <div class="logged-out">
           <div class="col-xs-12 sign-up">
             <form id="sign-up">
@@ -52,7 +52,7 @@
             </form>
           </div>
         </div>
-        <div class="admin">
+        <div class="admin hide">
           <div class="col-xs-12">
             <form id="get-users">
               <fieldset>
@@ -74,9 +74,9 @@
       </div>
 
     <main class="container">
-      <header class="navbar">
+      <!-- <header class="navbar">
         "Header - Add authentication"
-      </header>
+      </header> -->
       <!-- <div class="row">
         <div class="col-md-4">.col-md-4</div>
         <div class="col-md-4">.col-md-4</div>
@@ -90,16 +90,27 @@
            <div class='content'>Aspect ratio of 1:1</div>
         </div>
       </div> -->
+      <div class="play-control">
+        <div class="player">
+          Player
+        </div>
+        <button name="start" id="start" value="Start Game">
+          Start Game
+        </button>
+        <button name="reset" value="Reset Game">
+          Reset Game
+        </button>
+      </div>
       <div class="outer-grid">
-        <div class="grid-item">x</div>
-        <div class="grid-item">o</div>
-        <div class="grid-item">x</div>
-        <div class="grid-item">0</div>
-        <div class="grid-item">x</div>
-        <div class="grid-item">0</div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+        <div class="grid-item" id="a:1"></div>
+        <div class="grid-item" id="a:2"></div>
+        <div class="grid-item" id="a:3"></div>
+        <div class="grid-item" id="b:1"></div>
+        <div class="grid-item" id="b:2"></div>
+        <div class="grid-item" id="b:3"></div>
+        <div class="grid-item" id="c:1"></div>
+        <div class="grid-item" id="c:2"></div>
+        <div class="grid-item" id="c:3"></div>
       </div>
       <footer>
         Reporting
