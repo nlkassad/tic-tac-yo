@@ -18,7 +18,6 @@ const onSelectStart = function (event) {
   if (marker === null) {
     variables.playerMarker = "X";
     addHtmlPlayerMarker(".player");
-//    $(".player").html(variables.startingPlayer);
     console.log(marker);
   } else {
     console.log("Failure");
@@ -40,17 +39,13 @@ const onSelectSquare = function (event) {
 //  let div = event.target.id;
   if (isX && emptySquare) {
     addHtmlPlayerMarker(event.target);
-//    $(event.target).html(variables.playerMarker);
     variables.playerMarker = "O";
     addHtmlPlayerMarker(".player");
-//    $(".player").html(variables.playerMarker);
     console.log(variables.playerMarker);
   } else if (isO && emptySquare) {
     addHtmlPlayerMarker(event.target);
-//    $(event.target).html(variables.playerMarker);
     variables.playerMarker = "X";
     addHtmlPlayerMarker(".player");
-//    $(".player").html(variables.playerMarker);
     console.log(variables.playerMarker);
   } else {
     console.log("Failure");
