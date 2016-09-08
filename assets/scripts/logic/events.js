@@ -23,11 +23,11 @@ const onSelectStart = function (event) {
 
 const onSelectSquare = function (event) {
   event.preventDefault();
-  let text = event.target.html;
+//  let text = event.target.html;
   console.log(event.target.html);
   let isX = variables.playerMarker === "X";
   let isO = variables.playerMarker === "O";
-  let emptySquare = text !== "undefined";
+  let emptySquare = $(event.target).is(':empty');
 
 //  let div = event.target.id;
   if (isX && emptySquare) {
