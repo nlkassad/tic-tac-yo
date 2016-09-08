@@ -23,18 +23,22 @@ const onSelectStart = function (event) {
 
 const onSelectSquare = function (event) {
   event.preventDefault();
-  $(event.target).html(variables.playerMarker);
+  let text = event.target.html;
+  console.log(event.target.html);
+  let isX = variables.playerMarker === "X";
+  let isO = variables.playerMarker === "O";
+  let emptySquare = text !== "undefined";
+
 //  let div = event.target.id;
-  if (variables.playerMarker === "X") {
+  if (isX && emptySquare) {
+    $(event.target).html(variables.playerMarker);
     variables.playerMarker = "O";
     $(".player").html(variables.playerMarker);
-
     console.log(variables.playerMarker);
-  }
-  else if (variables.playerMarker === "O") {
+  } else if (isO && emptySquare) {
+    $(event.target).html(variables.playerMarker);
     variables.playerMarker = "X";
     $(".player").html(variables.playerMarker);
-
     console.log(variables.playerMarker);
   } else {
     console.log("Failure");
