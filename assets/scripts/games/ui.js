@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../app');
-// const win = require('./win');
+const win = require('./win');
 
 // const ui = require('./ui');
 
@@ -17,16 +17,9 @@ const clearGrid = function () {
 
 const selectSquareSuccess = (data) => {
   app.game = data.game;
+  win.indexCells(app.game);
 
-  let indices = [];
-  let array = app.game.cells;
-  let element = 'x';
-  let idx = array.indexOf(element);
-  while (idx !== -1) {
-    indices.push(idx);
-    idx = array.indexOf(element, idx + 1);
-  }
-  console.log(indices);
+
   //
   // function logArrayElements(element, index) {
   // console.log('a[' + index + '] = ' + element);

@@ -1,5 +1,18 @@
 'use strict';
 
+
+const indexCells = (data) => {
+  let indices = [];
+  let array = data.cells;
+  let element = 'x';
+  let idx = array.indexOf(element);
+  while (idx !== -1) {
+    indices.push(idx);
+    idx = array.indexOf(element, idx + 1);
+  }
+  console.log(indices);
+};
+
 // get array values
 // filter values for current user
 // http://api.jquery.com/filter/
@@ -15,7 +28,7 @@
 // };
 
 module.exports = {
-  getCellsX,
+  indexCells,
 };
 
 
