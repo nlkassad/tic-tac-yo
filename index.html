@@ -9,7 +9,7 @@
     <body class="container-fluid">
       <div class="authentication">
         <!-- <h1>API Token Auth</h1> -->
-        <div class="logged-out">
+        <div class="logged-out show">
           <div class="col-xs-12 sign-up">
             <form id="sign-up">
               <fieldset>
@@ -90,28 +90,37 @@
            <div class='content'>Aspect ratio of 1:1</div>
         </div>
       </div> -->
-      <div class="play-control">
-        <div class="player">
-          Player
+      <div class="play-control hide">
+        <div class="current-player">
+          <div class="player">
+            Player:
+          </div>
+          <div class="player-marker">
+          </div>
         </div>
-        <button name="start" id="start" value="Start Game">
-          Start Game
+        <button name="new-game" id="new-game" value="New Game">
+          New Game
         </button>
-        <button name="reset" value="Reset Game">
+        <!-- <button name="reset" value="Reset Game">
           Reset Game
-        </button>
+        </button> -->
       </div>
       <div class="outer-grid">
-        <div class="grid-item" id="a:1"></div>
-        <div class="grid-item" id="a:2"></div>
-        <div class="grid-item" id="a:3"></div>
-        <div class="grid-item" id="b:1"></div>
-        <div class="grid-item" id="b:2"></div>
-        <div class="grid-item" id="b:3"></div>
-        <div class="grid-item" id="c:1"></div>
-        <div class="grid-item" id="c:2"></div>
-        <div class="grid-item" id="c:3"></div>
+        <div class="grid-item a:1" id="0"></div>
+        <div class="grid-item a:2" id="1"></div>
+        <div class="grid-item a:3" id="2"></div>
+        <div class="grid-item b:1" id="3"></div>
+        <div class="grid-item b:2" id="4"></div>
+        <div class="grid-item b:3" id="5"></div>
+        <div class="grid-item c:1" id="6"></div>
+        <div class="grid-item c:2" id="7"></div>
+        <div class="grid-item c:3" id="8"></div>
       </div>
+      <form class="hide">
+        <input name="game[cell][index]" type="text" value="0">
+        <input name="game[cell][value]" type="text" value="x">
+        <input name="game[over]" type="text" value="false">
+      </form>
       <footer>
         Reporting
       </footer>

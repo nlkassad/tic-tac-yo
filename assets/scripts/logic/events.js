@@ -1,27 +1,32 @@
 'use strict';
 
-const api = require('./api');
-const ui = require('./ui');
-const variables = require('./variables');
+// const api = require('./api');
+// const ui = require('./ui');
+// const variables = require('./variables');
+
+
 
 const isEmpty = function (element) {
   return $(element).is(':empty');
 };
 
 const addHtmlPlayerMarker = function (target) {
-  return $(target).html(variables.playerMarker);
+  let marker = $(".player-marker").html();
+  return $(target).html(marker);
 };
 
 const onSelectStart = function (event) {
   event.preventDefault();
-  let marker = variables.playerMarker;
-  if (marker === null) {
-    variables.playerMarker = "X";
-    addHtmlPlayerMarker(".player");
-    console.log(marker);
-  } else {
-    console.log("Failure");
-  }
+//  let marker = "x";
+//  console.log(marker);
+  $(".player-marker").html("x");
+//  if () {
+//    variables.playerMarker = "X";
+//    $(".player-marker").html("x");
+//    console.log(".player-marker");
+//  } else {
+//    console.log("Failure");
+//  }
 
 //  let player = "Player: X";
 //  $('.player').html(player);
@@ -32,21 +37,23 @@ const onSelectSquare = function (event) {
   event.preventDefault();
 //  let text = event.target.html;
   console.log(event.target.html);
-  let marker = variables.playerMarker;
-  let isX = marker === "X";
-  let isO = marker === "O";
+  let marker = $(".player-marker").html();
+  console.log(marker);
+  let isX = marker === "x";
+  let isO = marker === "o";
   let emptySquare = isEmpty(event.target);
 //  let div = event.target.id;
   if (isX && emptySquare) {
     addHtmlPlayerMarker(event.target);
-    variables.playerMarker = "O";
-    addHtmlPlayerMarker(".player");
-    console.log(variables.playerMarker);
+//    variables.playerMarker = "o";
+    addHtmlPlayerMarker(".player-marker");
+
+//    console.log(variables.playerMarker);
   } else if (isO && emptySquare) {
     addHtmlPlayerMarker(event.target);
-    variables.playerMarker = "X";
-    addHtmlPlayerMarker(".player");
-    console.log(variables.playerMarker);
+//    variables.playerMarker = "x";
+    addHtmlPlayerMarker(".player-marker");
+//    console.log(variables.playerMarker);
   } else {
     console.log("Failure");
   }

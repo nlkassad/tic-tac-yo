@@ -8,10 +8,12 @@
 
 
 const authEvents = require('./auth/events.js');
-const logicEvents = require('./logic/events.js');
+//const logicEvents = require('./logic/events.js');
+const gamesEvents = require('./games/events.js');
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
-  logicEvents.addHandlers();
+//  logicEvents.addHandlers();
+  gamesEvents.addHandlers();
 });

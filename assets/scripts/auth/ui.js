@@ -2,16 +2,32 @@
 
 const app = require('../app');
 
+const clearGrid = function () {
+  $(".grid-item").empty();
+};
+
+const toggleLoggedInOut = function() {
+  $(".logged-in").toggleClass("hide show");
+  $(".logged-out").toggleClass("show hide");
+  $(".play-control").toggleClass("hide show");
+};
 
 const signInSuccess = (data) => {
   app.user = data.user;
 //  data.credentials = null;
-  $(".logged-in").toggleClass("hide, show");
-  $(".logged-out").toggleClass("show, hide");
   console.log(data);
   console.log(app.user);
   document.getElementById("sign-in").reset();
+  toggleLoggedInOut();
 //  debugger;
+};
+
+const signUpSuccess = (data) => {
+  app.user = data.user;
+  document.getElementById("sign-up").reset();
+  console.log(data);
+  console.log(app.user);
+  toggleLoggedInOut();
 };
 
 const changePasswordSuccess = () => {
@@ -28,31 +44,40 @@ const getUserSuccess = (data) => {
 
 const signOutSuccess = () => {
   console.log();
-  $(".logged-in").toggleClass("hide, show");
-  $(".logged-out").toggleClass("show, hide");
 //  document.find(".logged-in").toggle();
 //  document.find(".logged-out").toggle();
+  clearGrid();
   app.user = null;
+  toggleLoggedInOut();
 
 //  console.log("Password changed success");
 };
 
-const success = (data) => {
-  console.log(data);
-};
+
+
+
 
 const failure = (error) => {
   console.error(error);
 };
 
+const signOutFailure = () => {
+  console.log();
+//  document.find(".logged-in").toggle();
+//  document.find(".logged-out").toggle();
+//  app.user = null;
+  toggleLoggedInOut();
 
+//  console.log("Password changed success");
+};
 
 module.exports = {
   signInSuccess,
   getUsersSuccess,
   getUserSuccess,
   failure,
-  success,
+  signUpSuccess,
   changePasswordSuccess,
   signOutSuccess,
+  signOutFailure,
 };
