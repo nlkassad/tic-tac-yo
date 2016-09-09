@@ -27,22 +27,22 @@ const selectSquareSuccess = (data) => {
     idx = array.indexOf(element, idx + 1);
   }
   console.log(indices);
-
-  function logArrayElements(element, index) {
-  console.log('a[' + index + '] = ' + element);
-  }
-  let elementsArray = app.game.cells.forEach(logArrayElements);
-    let squares = jQuery.grep( [ "x", "o", "x" ], function( marker ) {
-    return marker !== "x";
-  });
-  console.log(elementsArray);
-  console.log(squares);
-  console.log(app.game.cells);
+  //
+  // function logArrayElements(element, index) {
+  // console.log('a[' + index + '] = ' + element);
+  // }
+  // let elementsArray = app.game.cells.forEach(logArrayElements);
+  //   let squares = jQuery.grep( [ "x", "o", "x" ], function( marker ) {
+  //   return marker !== "x";
+  // });
+  // console.log(elementsArray);
+  // console.log(squares);
+  // console.log(app.game.cells);
   // grep success need to see if I can return index numbers
-  let markers = app.game.cells.filter(function( cells ) {
-  return cells !== "x";
-  });
-  console.log(markers);
+  // let markers = app.game.cells.filter(function( cells ) {
+  // return cells !== "x";
+  // });
+  // console.log(markers);
 
 //  let markersArray[i] = jQuery.each().inArray( "x", app.game.cells);
 //  console.log(markersArray);
