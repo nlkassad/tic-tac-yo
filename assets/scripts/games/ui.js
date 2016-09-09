@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../app');
-const app = require('../win');
+// const win = require('../win');
 
 // const ui = require('./ui');
 
@@ -15,6 +15,16 @@ const clearGrid = function () {
 
 const selectSquareSuccess = (data) => {
   app.game = data.game;
+  let squares = jQuery.grep( [ "x", "o", "x" ], function( marker ) {
+  return marker !== "x";
+  });
+  console.log(squares);
+  console.log(app.game.cells);
+  // grep success need to see if I can return index numbers
+  let markers = jQuery.grep( app.game.cells, function( marker ) {
+  return marker !== "x";
+  });
+  console.log(markers);
 //  let value = $(".player-marker").html();
 
 //  data.credentials = null;
