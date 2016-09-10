@@ -7,7 +7,7 @@ const clearGrid = function () {
 };
 
 const setNavMessage = function(message) {
-  $("#top-nav-message").html(message);
+  $('[data-id="top-nav-message"]').html(message);
 };
 
 const toggleLoggedInOut = function() {
@@ -22,14 +22,13 @@ const signInSuccess = (data) => {
   document.getElementById("sign-in").reset();
   setNavMessage("Would you like to play a game?");
   toggleLoggedInOut();
-//  debugger;
 };
 
 const signUpSuccess = (data) => {
   app.user = data.user;
   document.getElementById("sign-up").reset();
   setNavMessage("You have an account! Now you may need to sign in...");
-  $("#games-played").empty();
+  $('[data-id="games-played"]').empty();
   toggleLoggedInOut();
 };
 

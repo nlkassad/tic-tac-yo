@@ -4,7 +4,7 @@ const app = require('../app');
 const win = require('./win');
 
 const setNavMessage = function(message) {
-  $("#top-nav-message").html(message);
+  $('[data-id="top-nav-message"]').html(message);
 };
 
 const clearGrid = function () {
@@ -43,7 +43,7 @@ const winnerLog = (data) => {
 const getGameDataSuccess = (data) => {
   app.games = data.games;
   let numberOfGames = app.games.length;
-  $("#games-played").html("Looks like you've played " + numberOfGames + " games");
+  $('[data-id="games-played"]').html("Looks like you've played " + numberOfGames + " games");
 };
 
 const getGameDataFailure = (data) => {

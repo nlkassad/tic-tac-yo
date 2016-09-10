@@ -9,7 +9,7 @@ const isEmpty = function (element) {
 };
 
 const setNavMessage = function(message) {
-  $("#top-nav-message").html(message);
+  $('[data-id="top-nav-message"]').html(message);
 };
 
 const addHtmlPlayerMarker = function (target) {

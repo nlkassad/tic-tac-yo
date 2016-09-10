@@ -7,17 +7,17 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div class="authentication">
-        <nav>
-          <div class="top-notification">
-            <div class="col-xs-12 notifications top-nav">
-              <div class="col-md-4"><strong>Notifications :</strong></div>
-              <div class="col-md-6" id="top-nav-message">
-                Looks like you should sign up or sign in!
-              </div>
+      <nav>
+        <div class="top-notification">
+          <div class="col-xs-12 notifications top-nav">
+            <div class="col-md-4"><strong>Notifications :</strong></div>
+            <div class="col-md-6" data-id="top-nav-message">
+              Looks like you should sign up or sign in!
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+      <div class="authentication">
         <div class="logged-out show">
           <div class="col-xs-12 sign-up">
             <form id="sign-up">
@@ -81,46 +81,38 @@
           </div>
         </div>
       </div>
-
-    <main class="container">
-      <div class="play-control hide">
-        <div class="current-player">
-          <div class="player">
-            Player:
+      <main class="container">
+        <div class="play-control hide">
+          <div class="current-player">
+            <div class="player">
+              Player:
+            </div>
+            <div class="player-marker">
+            </div>
           </div>
-          <div class="player-marker">
-          </div>
+          <button name="new-game" id="new-game" value="New Game">
+            New Game
+          </button>
         </div>
-        <button name="new-game" id="new-game" value="New Game">
-          New Game
-        </button>
-
-
-      </div>
-      <div class="outer-grid">
-        <div class="grid-item a:1" id="0"></div>
-        <div class="grid-item a:2" id="1"></div>
-        <div class="grid-item a:3" id="2"></div>
-        <div class="grid-item b:1" id="3"></div>
-        <div class="grid-item b:2" id="4"></div>
-        <div class="grid-item b:3" id="5"></div>
-        <div class="grid-item c:1" id="6"></div>
-        <div class="grid-item c:2" id="7"></div>
-        <div class="grid-item c:3" id="8"></div>
-      </div>
-      <form class="hide">
-        <input name="game[cell][index]" type="text" value="0">
-        <input name="game[cell][value]" type="text" value="x">
-        <input name="game[over]" type="text" value="false">
-      </form>
+        <div class="outer-grid">
+          <div class="grid-item a:1" id="0"></div>
+          <div class="grid-item a:2" id="1"></div>
+          <div class="grid-item a:3" id="2"></div>
+          <div class="grid-item b:1" id="3"></div>
+          <div class="grid-item b:2" id="4"></div>
+          <div class="grid-item b:3" id="5"></div>
+          <div class="grid-item c:1" id="6"></div>
+          <div class="grid-item c:2" id="7"></div>
+          <div class="grid-item c:3" id="8"></div>
+        </div>
+      </main>
       <footer class="game-data hide">
         <!-- Reporting -->
         <button name="get-game-data" id="get-game-data" value="Game Data">
           Are you a winner?
         </button>
-        <div id="games-played">
+        <div data-id="games-played">
         </div>
       </footer>
-
-    </main>
+  </body>
 </html>

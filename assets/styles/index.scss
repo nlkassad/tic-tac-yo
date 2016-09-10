@@ -1,47 +1,50 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$red: #f00;
+$top-nav-background: #ff0;
+$border-width-default: 5px;
+$square-dimension-reference: 75vw;
+$square-dimension-medium: 50vw;
+$square-dimension-small: 25vw;
+$square-dimension-text: 10vw;
+$thin-border: 1px;
 
 .hide {display: none;
 }
-.show {display: visible;
-}
-
-$red: #f00;
-$top-nav-background: #ff0;
 
 .square {
-  border: 5px solid $red;
-  height: 50vw;
+  border: $border-width-default solid $red;
+  height: $square-dimension-medium;
   text-align: center;
-  width: 50vw;
+  width: $square-dimension-medium;
 }
 
 .outer-grid {
-  height: 75vw;
+  height: $square-dimension-reference;
   margin: 0 auto;
   text-align: center;
-  width: 75vw;
+  width: $square-dimension-reference;
 }
 
 .grid-item {
-  border: 1px solid $red;
+  border: $thin-border solid $red;
   float: left;
-  font-size: 10vw;
-  height: 25vw;
+  font-size: $square-dimension-text;
+  height: $square-dimension-small;
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  width: 25vw;
+  width: $square-dimension-small;
 }
 
-nav {
+.top-navigation {
   background-color: $top-nav-background;
   height: 10%;
 }
 
 .top-nav {
   background-color: $top-nav-background;
-  border: 1px solid $red;
+  border: $thin-border solid $red;
 
 }
