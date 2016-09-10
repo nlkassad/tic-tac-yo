@@ -77,8 +77,10 @@ const checkForWin = function (index) {
 
     if(matchA && matchB && matchC){
       console.log("win!!!");
+      return true;
     } else {
     console.log("keep playing!");
+    return false;
   }
 }
 //  arr.filter(function(item){return ["190","200"].indexOf(item[0])>=0})
