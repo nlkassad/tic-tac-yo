@@ -52,6 +52,25 @@ const selectSquareSuccess = (data) => {
   }
 };
 
+const winnerLog = (data) => {
+  app.game = data.game;
+  console.log(app.game);
+};
+
+const getGameDataSuccess = (data) => {
+  console.log(data);
+  app.games = data.games;
+  console.log(app.games.length);
+  let numberOfGames = app.games.length;
+  console.log(numberOfGames);
+  $("#games-played").html("Looks like you've played " + numberOfGames + " games");
+};
+
+const getGameDataFailure = (data) => {
+  app.game = data.game;
+  setNavMessage("Boo, no data for you.");
+};
+
 const newGameSuccess = (data) => {
   app.game = data.game;
   $(".player-marker").html("x");
@@ -78,6 +97,9 @@ module.exports = {
   selectSquareSuccess,
   newGameFailure,
   selectSquareFailure,
+  winnerLog,
+  getGameDataSuccess,
+  getGameDataFailure,
 };
 
 // jquery grep reference: used in selectSquareSuccess

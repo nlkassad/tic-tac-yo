@@ -13,6 +13,7 @@ const setNavMessage = function(message) {
 const toggleLoggedInOut = function() {
   $(".logged-in").toggleClass("hide show");
   $(".logged-out").toggleClass("show hide");
+  $(".game-data").toggleClass("show hide");
   $(".play-control").toggleClass("hide show");
 };
 
