@@ -3,7 +3,6 @@
 const app = require('../app');
 
 const selectSquare = (data) => {
-  console.log(data);
   return $.ajax({
     url: app.host + "/games/" + app.game.id,
     method: "PATCH",

@@ -37,6 +37,11 @@ const changePasswordSuccess = () => {
 };
 
 const getUsersSuccess = (data) => {
+  setNavMessage(data);
+};
+
+const getUserSuccess = (data) => {
+  setNavMessage(data);
 };
 
 const signOutSuccess = () => {

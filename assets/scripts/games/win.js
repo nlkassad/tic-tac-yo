@@ -23,33 +23,31 @@ const indexCells = (data, marker) => {
   return indices;
 };
 
-const matchIndex = function(arrayName, variable){
-  return (arrayName.indexOf(variable) !== -1);
-};
-
 const checkForWin = function (index) {
-  console.log(index);
-  for (let i=0; i < winArray.length; i++) {
+//  if index is greater than 2
+//  if i can find all value of a win condition in the array win is true
+//  let array = [0,1,2];
+  for (let i=0, max = winArray.length; i < max; i++) {
     let a, b, c;
-    a = index[winArray[i][0]];
-    console.log(a);
-    let matchA = matchIndex(index, a);
-    console.log(matchA);
-    b = index[winArray[i][1]];
-    let matchB = matchIndex(index, b);
-    c = index[winArray[i][2]];
-    let matchC = matchIndex(index, c);
-    console.log(matchA, matchB, matchC);
+    const matchIndex = function(arrayName, variable){
+      return (arrayName.indexOf(variable) !== -1);
+    };
+    a = winArray[i][0];
+    b = winArray[i][1];
+    c = winArray[i][2];
+    let checkA = matchIndex(index, a);
+    let checkB = matchIndex(index, b);
+    let checkC = matchIndex(index, c);
 
-    if(matchA && matchB && matchC){
-      console.log("win!!!");
+    if(checkA && checkB && checkC){
       return true;
+    } else if (i < winArray.length) {
     } else {
-    console.log("keep playing!");
     return false;
+    }
   }
-}
 };
+
 
 module.exports = {
   indexCells,
