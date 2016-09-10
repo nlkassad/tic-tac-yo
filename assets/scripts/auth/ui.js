@@ -29,6 +29,7 @@ const signUpSuccess = (data) => {
   app.user = data.user;
   document.getElementById("sign-up").reset();
   setNavMessage("You have an account! Now you may need to sign in...");
+  $("#games-played").empty();
   toggleLoggedInOut();
 };
 
