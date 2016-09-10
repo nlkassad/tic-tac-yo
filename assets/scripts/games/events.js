@@ -18,7 +18,7 @@ const onSelectSquare = function (event) {
   event.preventDefault();
   let emptySquare = isEmpty(event.target);
   //  let div = event.target.id;
-  if ((emptySquare && !app.game.over) === true) {
+  if ((emptySquare) === true) {
     addHtmlPlayerMarker(event.target);
     let index = event.target.id;
     let value = $(".player-marker").html();
