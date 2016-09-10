@@ -6,6 +6,10 @@ const clearGrid = function () {
   $(".grid-item").empty();
 };
 
+const setNavMessage = function(message) {
+  $("#top-nav-message").html(message);
+};
+
 const toggleLoggedInOut = function() {
   $(".logged-in").toggleClass("hide show");
   $(".logged-out").toggleClass("show hide");
@@ -18,6 +22,7 @@ const signInSuccess = (data) => {
   console.log(data);
   console.log(app.user);
   document.getElementById("sign-in").reset();
+  setNavMessage("Would you like to play a game?");
   toggleLoggedInOut();
 //  debugger;
 };
@@ -27,6 +32,7 @@ const signUpSuccess = (data) => {
   document.getElementById("sign-up").reset();
   console.log(data);
   console.log(app.user);
+  setNavMessage("You have an account! Now you may need to sign in...");
   toggleLoggedInOut();
 };
 
@@ -48,6 +54,7 @@ const signOutSuccess = () => {
 //  document.find(".logged-out").toggle();
   clearGrid();
   app.user = null;
+  setNavMessage("Fine, leave me, whatever...");
   toggleLoggedInOut();
 
 //  console.log("Password changed success");

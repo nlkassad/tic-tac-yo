@@ -9,6 +9,10 @@ const win = require('./win');
 // //  let marker = $(".player-marker").html();
 //   return $(target).html(data.);
 // };
+const setNavMessage = function(message) {
+  $("#top-nav-message").html(message);
+};
+
 const clearGrid = function () {
   $(".grid-item").empty();
 };
@@ -31,13 +35,21 @@ const selectSquareSuccess = (data) => {
   let indices = win.indexCells(app.game, marker);
   console.log(indices);
   let winState = win.checkForWin(indices);
+  if (winState === true) {
+    setNavMessage("Damn Player " + marker + " you got crazy tic tac skillz!");
+    app.game.over = true;
+    return app.game.over;
+//    console.log(app.game);
+//    console.log(app.game.over);
+    // trigger submit game log event
+  } else {
 
 //  data.credentials = null;
-  console.log(data);
-  console.log(app.game);
-  console.log(winState);
-  toggleMarker();
-
+//  console.log(data);
+//  console.log(app.game);
+//  console.log("this is the " + winState);
+    toggleMarker();
+  }
 };
 
 const newGameSuccess = (data) => {
@@ -46,15 +58,26 @@ const newGameSuccess = (data) => {
 //  data.credentials = null;
 //  console.log(data);
   console.log(app.game);
+  setNavMessage("Here we go! Look at the player indicator for your turn.");
   clearGrid();
 //  document.getElementById("sign-in").reset();
 //  toggleLoggedInOut();
 //  debugger;
 };
 
+const newGameFailure = () => {
+  setNavMessage("Something went wrong, horribly wrong");
+};
+
+const selectSquareFailure = () => {
+  setNavMessage("Nah, don't think that's a move");
+};
+
 module.exports = {
   newGameSuccess,
   selectSquareSuccess,
+  newGameFailure,
+  selectSquareFailure,
 };
 
 // jquery grep reference: used in selectSquareSuccess

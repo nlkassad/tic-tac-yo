@@ -18,7 +18,7 @@ const onSelectSquare = function (event) {
   event.preventDefault();
   let emptySquare = isEmpty(event.target);
   //  let div = event.target.id;
-  if (emptySquare === true) {
+  if ((emptySquare && !app.game.over) === true) {
     addHtmlPlayerMarker(event.target);
     let index = event.target.id;
     let value = $(".player-marker").html();
@@ -34,11 +34,11 @@ const onSelectSquare = function (event) {
   //  let data = getFormFields(event.target);
     api.selectSquare(data)
       .done(ui.selectSquareSuccess)
-      .fail(ui.failure);
+      .fail(ui.selectSquareFailure);
   //    variables.playerMarker = "o";
-    
+
   } else {
-    console.log("Failure");
+    ui.selectSquareFailure();
   }
 
 
@@ -49,7 +49,7 @@ const onSelectNewGame = function (event) {
 //  let data = getFormFields(event.target);
   api.selectNewGame()
     .done(ui.newGameSuccess)
-    .fail(ui.failure);
+    .fail(ui.newGameFailure);
 };
 
 

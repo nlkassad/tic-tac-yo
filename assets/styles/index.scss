@@ -8,6 +8,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 $red: #f00;
+$top-nav-background: #ff0;
 
 .square {
   border: 5px solid $red;
@@ -40,4 +41,22 @@ $red: #f00;
   text-align: center;
   font-size: 10vw;
   width: 25vw;
+}
+
+nav {
+  background-color: $top-nav-background;
+  height: 10%;
+}
+
+.top-nav {
+//  text-align: center;
+  background-color: $top-nav-background;
+  border: 1px solid $red;
+//  height: 100%;
+  // float: left;
+//  height: auto;
+//  text-align: center;
+//  width: 35vw;
+//  height: auto;
+//  display: inline-block;
 }
