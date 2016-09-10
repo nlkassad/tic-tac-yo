@@ -54,7 +54,7 @@ const indexCells = (data, marker) => {
 //alert(myFilter(keys));
 // end test
 const matchIndex = function(arrayName, variable){
-  return (arrayName.indexOf(variable) !== -1); 
+  return (arrayName.indexOf(variable) !== -1);
 };
 
 const checkForWin = function (index) {
@@ -67,10 +67,15 @@ const checkForWin = function (index) {
     //these varaibles become what the board is holding 'x', 'o', or 0
     a = index[winArray[i][0]];
     console.log(a);
+    let matchA = matchIndex(index, a);
+    console.log(matchA);
     b = index[winArray[i][1]];
+    let matchB = matchIndex(index, b);
     c = index[winArray[i][2]];
+    let matchC = matchIndex(index, c);
+    console.log(matchA, matchB, matchC);
 
-    if(matchIndex(index, a) && matchIndex(index, b) && matchIndex(index, b)){
+    if(matchA && matchB && matchC){
       console.log("win!!!");
     } else {
     console.log("keep playing!");
