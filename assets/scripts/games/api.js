@@ -15,7 +15,6 @@ const selectSquare = (data) => {
 };
 
 const getGameData = (data) => {
-  console.log(data);
   return $.ajax({
     url: app.host + "/games",
     method: "GET",
@@ -27,7 +26,6 @@ const getGameData = (data) => {
 };
 
 const setWinner = (data) => {
-  console.log(data);
   return $.ajax({
     url: app.host + "/games/" + app.game.id,
     method: "PATCH",
@@ -39,7 +37,6 @@ const setWinner = (data) => {
 };
 
 const selectNewGame = (data) => {
-  console.log();
   return $.ajax({
     url: app.host + "/games",
     method: "POST",

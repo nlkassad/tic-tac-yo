@@ -17,14 +17,6 @@ $top-nav-background: #ff0;
   width: 50vw;
 }
 
-// .grid {}
-//
-// .grid::before,
-// .grid::after {
-//   clear: both;
-//   content: '';
-//   display: block;
-// }
 .outer-grid {
   height: 75vw;
   margin: 0 auto;
@@ -34,12 +26,12 @@ $top-nav-background: #ff0;
 
 .grid-item {
   border: 1px solid $red;
+  float: left;
+  font-size: 10vw;
+  height: 25vw;
   margin: 0 auto;
   padding: 0;
-  float: left;
-  height: 25vw;
   text-align: center;
-  font-size: 10vw;
   width: 25vw;
 }
 
@@ -49,14 +41,7 @@ nav {
 }
 
 .top-nav {
-//  text-align: center;
   background-color: $top-nav-background;
   border: 1px solid $red;
-//  height: 100%;
-  // float: left;
-//  height: auto;
-//  text-align: center;
-//  width: 35vw;
-//  height: auto;
-//  display: inline-block;
+
 }

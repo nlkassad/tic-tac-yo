@@ -31,7 +31,6 @@ const onChangePassword = function (event) {
 const onGetUsers = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-//  let data = getFormFields(event.target);
   api.getUsers(data)
     .done(ui.getUsersSuccess)
     .fail(ui.failure);
@@ -47,7 +46,6 @@ const onGetUser = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault();
-//  let data = getFormFields(event.target);
   api.signOut()
     .done(ui.signOutSuccess)
     .fail(ui.signOutFailure);

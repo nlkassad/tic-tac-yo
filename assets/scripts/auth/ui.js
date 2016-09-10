@@ -19,9 +19,6 @@ const toggleLoggedInOut = function() {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-//  data.credentials = null;
-  console.log(data);
-  console.log(app.user);
   document.getElementById("sign-in").reset();
   setNavMessage("Would you like to play a game?");
   toggleLoggedInOut();
@@ -31,52 +28,31 @@ const signInSuccess = (data) => {
 const signUpSuccess = (data) => {
   app.user = data.user;
   document.getElementById("sign-up").reset();
-  console.log(data);
-  console.log(app.user);
   setNavMessage("You have an account! Now you may need to sign in...");
   toggleLoggedInOut();
 };
 
 const changePasswordSuccess = () => {
-  console.log("Password changed success");
+  setNavMessage("You just gone dun changed your password!");
 };
 
 const getUsersSuccess = (data) => {
-  console.log(data);
-};
-
-const getUserSuccess = (data) => {
-  console.log(data);
 };
 
 const signOutSuccess = () => {
-  console.log();
-//  document.find(".logged-in").toggle();
-//  document.find(".logged-out").toggle();
   clearGrid();
   app.user = null;
   setNavMessage("Fine, leave me, whatever...");
   toggleLoggedInOut();
-
-//  console.log("Password changed success");
 };
 
-
-
-
-
-const failure = (error) => {
-  console.error(error);
+const failure = () => {
+  setNavMessage("Something went wrong...");
 };
 
 const signOutFailure = () => {
-  console.log();
-//  document.find(".logged-in").toggle();
-//  document.find(".logged-out").toggle();
-//  app.user = null;
+  setNavMessage("Something went wrong...");
   toggleLoggedInOut();
-
-//  console.log("Password changed success");
 };
 
 module.exports = {
