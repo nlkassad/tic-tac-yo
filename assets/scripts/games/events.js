@@ -12,22 +12,10 @@ const addHtmlPlayerMarker = function (target) {
   return $(target).html(marker);
 };
 
-const toggleMarker = function () {
-  let marker = $(".player-marker").html();
-  if (marker === "x") {
-    return $(".player-marker").html("o");
-  } else if (marker === "o") {
-    return $(".player-marker").html("x");
-  } else {
-    console.log("fail boat");
-  }
-};
+
 
 const onSelectSquare = function (event) {
   event.preventDefault();
-//  let marker = $(".player-marker").html();
-//  let isX = marker === "x";
-//  let isO = marker === "o";
   let emptySquare = isEmpty(event.target);
   //  let div = event.target.id;
   if (emptySquare === true) {
@@ -48,14 +36,7 @@ const onSelectSquare = function (event) {
       .done(ui.selectSquareSuccess)
       .fail(ui.failure);
   //    variables.playerMarker = "o";
-    toggleMarker();
-
-  //    console.log(variables.playerMarker);
-//  } else if (isO && emptySquare) {
-//    addHtmlPlayerMarker(event.target);
-  //    variables.playerMarker = "x";
-//    addHtmlPlayerMarker(".player-marker");
-  //    console.log(variables.playerMarker);
+    
   } else {
     console.log("Failure");
   }
