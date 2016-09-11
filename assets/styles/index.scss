@@ -4,13 +4,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $red: #f00;
 $top-nav-background: #ff0;
 $border-width-default: 5px;
-$square-dimension-reference: 75vw;
-$square-dimension-medium: 50vw;
-$square-dimension-small: 25vw;
-$square-dimension-text: 10vw;
+$square-dimension-reference: 60vmin;
+$square-dimension-medium: 30vmin;
+$square-dimension-small: 20vmin;
+$square-dimension-text: 10vmin;
 $thin-border: 1px;
 
 .hide {display: none;
+}
+
+div {
+  text-align: center;
 }
 
 .square {
@@ -23,6 +27,7 @@ $thin-border: 1px;
 .outer-grid {
   height: $square-dimension-reference;
   margin: 0 auto;
+  overflow: hidden;
   text-align: center;
   width: $square-dimension-reference;
 }
