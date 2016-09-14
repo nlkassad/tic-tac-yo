@@ -14,9 +14,9 @@ const clearGrid = function () {
 const toggleMarker = function () {
   let marker = $(".player-marker").html();
   if (marker === "x") {
-    return $(".player-marker").html("o");
+    return $(".player-marker").html("o").fadeIn();
   } else if (marker === "o") {
-    return $(".player-marker").html("x");
+    return $(".player-marker").html("x").fadeIn();
   } else {
   }
 };
@@ -26,11 +26,16 @@ const selectSquareSuccess = (data) => {
   let marker = $(".player-marker").html();
   let indices = win.indexCells(app.game, marker);
   let winState = win.checkForWin(indices);
+  let someEmpty = app.game.cells.includes("");
+  console.log(app.game);
+  //console.log(noEmpty);
   if (winState === true) {
     setNavMessage("Damn Player " + marker + " you got crazy tic tac skillz!");
     app.game.over = true;
     return app.game.over;
     // trigger submit game log event
+  } else if (someEmpty === false){
+    setNavMessage("Nah, yah ain't gonna win this time.");
   } else {
     toggleMarker();
   }

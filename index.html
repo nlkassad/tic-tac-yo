@@ -1,118 +1,121 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Now This Is What I Call Tic-Tac-Toe 2016!</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
+    <body>
       <nav>
         <div class="top-notification">
-          <div class="col-xs-12 notifications top-nav">
-            <div class="col-xs-4"><strong>Notifications :</strong></div>
-            <div class="col-xs-6" data-id="top-nav-message">
+          <div class="notifications top-nav">
+            <div> <strong>Notifications :</strong></div>
+            <div data-id="top-nav-message">
               Looks like you should sign up or sign in!
             </div>
           </div>
         </div>
       </nav>
-      <div class="authentication">
-        <div class="logged-out show">
-          <div class="col-xs-12 sign-up">
-            <form id="sign-up">
-              <fieldset>
-                <legend>Sign up!</legend>
-                <input type="email" name="credentials[email]" placeholder="Enter your email">
-                <input type="password" name="credentials[password]" placeholder="Enter your password">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
-                <input type="submit" name="submit" value="Sign up!">
-              </fieldset>
-            </form>
-          </div>
-          <div class="col-xs-12">
-            <form id="sign-in">
-              <fieldset>
-                <legend>Sign in!</legend>
-                <input type="email" name="credentials[email]" placeholder="Enter your email">
-                <input type="password" name="credentials[password]" placeholder="Enter your password">
-                <input type="submit" name="submit" value="Sign in!">
-              </fieldset>
-            </form>
-          </div>
-        </div>
-        <div class="logged-in hide">
-          <div class="col-xs-12">
-            <form id="sign-out">
-              <fieldset>
-                <legend>Sign Out</legend>
-                <input type="submit" name="submit" value="Sign Out">
-              </fieldset>
-            </form>
-          </div>
-          <div class="col-xs-12">
-            <form id="change-password">
-              <fieldset>
-                <legend>Change password</legend>
-                <input type="password" name="passwords[old]" placeholder="Enter your old password">
-                <input type="password" name="passwords[new]" placeholder="Enter your new password">
-                <input type="submit" name="submit" value="Change Password">
-              </fieldset>
-            </form>
-          </div>
-        </div>
-        <div class="admin hide">
-          <div class="col-xs-12">
-            <form id="get-users">
-              <fieldset>
-                <legend>Get Users</legend>
-                <input type="submit" name="submit" value="Get Users">
-              </fieldset>
-            </form>
-          </div>
-          <div class="col-xs-12">
-            <form id="get-user">
-              <fieldset>
-                <legend>Get User</legend>
-                <input type="text" name="getUser[id]" id="user-id" placeholder="Enter the user id">
-                <input type="submit" name="submit" value="Get User">
-              </fieldset>
-            </form>
-          </div>
-        </div>
-      </div>
       <main class="container">
-        <div class="play-control hide">
-          <div class="current-player">
-            <div class="player">
-              Player:
+        <div class="authentication">
+          <div class="logged-out show">
+            <div class="sign-up">
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign up!</legend>
+                  <input type="email" name="credentials[email]" placeholder="Enter your email">
+                  <input type="password" name="credentials[password]" placeholder="Enter your password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
+                  <input type="submit" name="submit" value="Sign up!">
+                </fieldset>
+              </form>
             </div>
-            <div class="player-marker">
+            <div>
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Sign in!</legend>
+                  <input type="email" name="credentials[email]" placeholder="Enter your email">
+                  <input type="password" name="credentials[password]" placeholder="Enter your password">
+                  <input type="submit" name="submit" value="Sign in!">
+                </fieldset>
+              </form>
             </div>
           </div>
-          <button name="new-game" id="new-game" value="New Game">
-            New Game
-          </button>
+          <div class="logged-in hide">
+            <div>
+              <form id="sign-out">
+                <fieldset>
+                  <legend>Sign Out</legend>
+                  <input type="submit" name="submit" value="Sign Out">
+                </fieldset>
+              </form>
+            </div>
+            <div>
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change password</legend>
+                  <input type="password" name="passwords[old]" placeholder="Enter your old password">
+                  <input type="password" name="passwords[new]" placeholder="Enter your new password">
+                  <input type="submit" name="submit" value="Change Password">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="admin hide">
+            <div>
+              <form id="get-users">
+                <fieldset>
+                  <legend>Get Users</legend>
+                  <input type="submit" name="submit" value="Get Users">
+                </fieldset>
+              </form>
+            </div>
+            <div>
+              <form id="get-user">
+                <fieldset>
+                  <legend>Get User</legend>
+                  <input type="text" name="getUser[id]" id="user-id" placeholder="Enter the user id">
+                  <input type="submit" name="submit" value="Get User">
+                </fieldset>
+              </form>
+            </div>
+          </div>
         </div>
         <div class="outer-grid">
-          <div class="grid-item a:1" id="0"></div>
-          <div class="grid-item a:2" id="1"></div>
-          <div class="grid-item a:3" id="2"></div>
-          <div class="grid-item b:1" id="3"></div>
-          <div class="grid-item b:2" id="4"></div>
-          <div class="grid-item b:3" id="5"></div>
-          <div class="grid-item c:1" id="6"></div>
-          <div class="grid-item c:2" id="7"></div>
-          <div class="grid-item c:3" id="8"></div>
+          <div>
+            <div class="grid-item a:1" id="0"></div>
+            <div class="grid-item a:2" id="1"></div>
+            <div class="grid-item a:3" id="2"></div>
+            <div class="grid-item b:1" id="3"></div>
+            <div class="grid-item b:2" id="4"></div>
+            <div class="grid-item b:3" id="5"></div>
+            <div class="grid-item c:1" id="6"></div>
+            <div class="grid-item c:2" id="7"></div>
+            <div class="grid-item c:3" id="8"></div>
+          </div>
+          <footer class="game-data hide">
+            <div class="play-control hide">
+              <div class="current-player">
+                <div class="player">
+                  Player:
+                </div>
+                <div class="player-marker">
+                </div>
+              </div>
+              <button name="new-game" id="new-game" value="New Game">
+                New Game
+              </button>
+            </div>
+            <!-- Reporting -->
+            <button name="get-game-data" id="get-game-data" value="Game Data">
+              Are you a winner?
+            </button>
+            <div data-id="games-played">
+            </div>
+          </footer>
         </div>
       </main>
-      <footer class="game-data hide">
-        <!-- Reporting -->
-        <button name="get-game-data" id="get-game-data" value="Game Data">
-          Are you a winner?
-        </button>
-        <div data-id="games-played">
-        </div>
-      </footer>
+
   </body>
 </html>

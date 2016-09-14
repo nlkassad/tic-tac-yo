@@ -34,6 +34,12 @@ const signUpSuccess = (data) => {
 
 const changePasswordSuccess = () => {
   setNavMessage("You just gone dun changed your password!");
+  document.getElementById("change-password").reset();
+};
+
+const changePasswordFailure = () => {
+  setNavMessage("Something went wrong...");
+  document.getElementById("change-password").reset();
 };
 
 const getUsersSuccess = (data) => {
@@ -53,6 +59,7 @@ const signOutSuccess = () => {
 
 const failure = () => {
   setNavMessage("Something went wrong...");
+  this.reset();
 };
 
 const signOutFailure = () => {
@@ -67,6 +74,7 @@ module.exports = {
   failure,
   signUpSuccess,
   changePasswordSuccess,
+  changePasswordFailure,
   signOutSuccess,
   signOutFailure,
 };

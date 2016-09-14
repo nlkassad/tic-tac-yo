@@ -1,6 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
 $red: #f00;
 $top-nav-background: #ff0;
 $border-width-default: 5px;
@@ -9,31 +17,85 @@ $square-dimension-medium: 30vmin;
 $square-dimension-small: 20vmin;
 $square-dimension-text: 10vmin;
 $thin-border: 1px;
+$black: #000;
+$white: #fff;
+$light-shade-grey: alpha-attribute('background-color', rgba($top-nav-background, .7), $white);
+$top-bottom-bar-height: 12vh;
 
 .hide {display: none;
 }
 
-div {
+div,
+footer {
   text-align: center;
+}
+
+
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+form {
+  @include alpha-attribute('background-color', rgba($black, .2), $white);
+  clear: both;
+  display: block;
+//  border: $thin-border solid $light-shade-grey;
+}
+
+body {
+  @include alpha-attribute('background-color', rgba($black, .1), $white);
+  align-self: center;
+  display: block;
+  font-size: 3vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  text-align: center;
+  width: 90vw;
+//  height: $top-bottom-bar-height;
+}
+
+input {
+//  background: none;
+  border: 0;
+//  height: 2em;
+//  line-height: 2em;
+  font-size: 2vmin;
+  width: 90%;
+
+//  color: rgb(136, 136, 136);
+//  outline: none;
+}
+
+.authentication {
+  clear: left;
+  display: inline-block;
+  float: left;
+  height: 10vmin;
+  margin-top: $top-bottom-bar-height;
+  width: 25vmin;
+  // zoom: 0.5;
+  //   -moz-transform: scale(0.5);
 }
 
 .square {
   border: $border-width-default solid $red;
-  height: $square-dimension-medium;
   text-align: center;
   width: $square-dimension-medium;
 }
 
 .outer-grid {
   height: $square-dimension-reference;
-  margin: 0 auto;
-  overflow: hidden;
+  margin-left: 25vmin;
+  margin-top: $top-bottom-bar-height;
+//  overflow: hidden;
   text-align: center;
   width: $square-dimension-reference;
 }
 
 .grid-item {
-  border: $thin-border solid $red;
+  border: 1vmin solid $white;
   float: left;
   font-size: $square-dimension-text;
   height: $square-dimension-small;
@@ -43,13 +105,22 @@ div {
   width: $square-dimension-small;
 }
 
-.top-navigation {
-  background-color: $top-nav-background;
-  height: 10%;
-}
+// .top-navigation {
+//   background-color: $top-nav-background;
+//   height: 2%;
+// }
 
-.top-nav {
-  background-color: $top-nav-background;
-  border: $thin-border solid $red;
-
+nav {
+//  background-color: $top-nav-background;
+  @include alpha-attribute('background-color', rgba($top-nav-background, .7), $white);
+//  align-self: center;
+  display: block;
+  font-size: 3vh;
+  height: $top-bottom-bar-height;
+  margin: 0;
+  margin-right: 25vmin;
+  padding: 0;
+  position: fixed;
+  text-align: left;
+  width: 100%;
 }

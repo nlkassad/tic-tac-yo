@@ -25,7 +25,7 @@ const onChangePassword = function (event) {
   let data = getFormFields(event.target);
   api.changePassword(data)
     .done(ui.changePasswordSuccess)
-    .fail(ui.failure);
+    .fail(ui.changePasswordFailure);
 };
 
 const onGetUsers = function (event) {
