@@ -29,7 +29,7 @@ const signUpSuccess = (data) => {
   document.getElementById("sign-up").reset();
   setNavMessage("You have an account! Now you may need to sign in...");
   $('[data-id="games-played"]').empty();
-  toggleLoggedInOut();
+  // removed authentication ui toggle 
 };
 
 const changePasswordSuccess = () => {
