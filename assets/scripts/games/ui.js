@@ -27,8 +27,6 @@ const selectSquareSuccess = (data) => {
   let indices = win.indexCells(app.game, marker);
   let winState = win.checkForWin(indices);
   let someEmpty = app.game.cells.includes("");
-  console.log(app.game);
-  //console.log(noEmpty);
   if (winState === true) {
     setNavMessage("Damn Player " + marker + " you got crazy tic tac skillz!");
     app.game.over = true;
