@@ -24,12 +24,12 @@ const signInSuccess = (data) => {
   toggleLoggedInOut();
 };
 
-const signUpSuccess = (data) => {
-  app.user = data.user;
+const signUpSuccess = () => {
+//  app.user = data.user;
   document.getElementById("sign-up").reset();
-  setNavMessage("You have an account! Now you may need to sign in...");
-  $('[data-id="games-played"]').empty();
-  // removed authentication ui toggle 
+  setNavMessage("Cool yo, now sign in...");
+//  $('[data-id="games-played"]').empty();
+  // removed authentication ui toggle
 };
 
 const changePasswordSuccess = () => {
