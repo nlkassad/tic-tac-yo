@@ -287,7 +287,7 @@ webpackJsonp([0],[
 	var signInSuccess = function signInSuccess(data) {
 	  app.user = data.user;
 	  document.getElementById("sign-in").reset();
-	  setNavMessage("Would you like to play a game?");
+	  setNavMessage("Think you got game? Press New Game playa.");
 	  toggleLoggedInOut();
 	};
 
@@ -320,6 +320,7 @@ webpackJsonp([0],[
 	var signOutSuccess = function signOutSuccess() {
 	  clearGrid();
 	  app.user = null;
+	  app.game = null;
 	  setNavMessage("Fine, leave me, whatever...");
 	  toggleLoggedInOut();
 	};
@@ -373,7 +374,7 @@ webpackJsonp([0],[
 	var onSelectSquare = function onSelectSquare(event) {
 	  event.preventDefault();
 	  var emptySquare = isEmpty(event.target);
-	  if ((emptySquare && !app.game.over) === true) {
+	  if (emptySquare === true && app.game.over === false) {
 	    addHtmlPlayerMarker(event.target);
 	    var index = event.target.id;
 	    var value = $(".player-marker").html();
@@ -387,17 +388,32 @@ webpackJsonp([0],[
 	      }
 	    };
 	    api.selectSquare(data).done(ui.selectSquareSuccess).fail(ui.selectSquareFailure);
+	    if (app.game.over === true) {
+	      var _data = {
+	        "game": {
+	          "cell": {
+	            "index": [],
+	            "value": []
+	          },
+	          "over": true
+	        }
+	      };
+	      api.setWinner(_data).done(ui.winnerLog);
+	      setNavMessage("The game's already over, you should start a new one.");
+	    } else {}
 	  } else if (app.game.over === true) {
-	    var _data = {
-	      "game": {
-	        "cell": {
-	          "index": [],
-	          "value": []
-	        },
-	        "over": true
-	      }
-	    };
-	    api.setWinner(_data).done(ui.winnerLog);
+	    // let data = {
+	    //     "game": {
+	    //       "cell": {
+	    //         "index": [],
+	    //         "value": [],
+	    //       },
+	    //       "over": true
+	    //     }
+	    //   };
+	    // api.setWinner(data)
+	    //   .done(ui.winnerLog);
+	    ui.selectSquareFailure();
 	    setNavMessage("The game's already over, you should start a new one.");
 	  } else {
 	    ui.selectSquareFailure();
