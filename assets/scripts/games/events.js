@@ -61,7 +61,7 @@ const onSelectNewGame = function (event) {
     .fail(ui.newGameFailure);
 };
 
-const onGetGameData = function () {
+const onGetGameData = function (event) {
   event.preventDefault();
   api.getGameData()
     .done(ui.getGameDataSuccess)
