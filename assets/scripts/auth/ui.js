@@ -20,7 +20,7 @@ const toggleLoggedInOut = function() {
 const signInSuccess = (data) => {
   app.user = data.user;
   document.getElementById("sign-in").reset();
-  setNavMessage("Would you like to play a game?");
+  setNavMessage("Think you got game? Press New Game playa.");
   toggleLoggedInOut();
 };
 
@@ -53,6 +53,7 @@ const getUserSuccess = (data) => {
 const signOutSuccess = () => {
   clearGrid();
   app.user = null;
+  app.game = null;
   setNavMessage("Fine, leave me, whatever...");
   toggleLoggedInOut();
 };
