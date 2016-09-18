@@ -20,7 +20,7 @@ const addHtmlPlayerMarker = function (target) {
 const onSelectSquare = function (event) {
   event.preventDefault();
   let emptySquare = isEmpty(event.target);
-  if ((emptySquare && !app.game.over) === true) {
+  if ((emptySquare === true) && (app.game.over === false)) {
     addHtmlPlayerMarker(event.target);
     let index = event.target.id;
     let value = $(".player-marker").html();
@@ -36,18 +36,33 @@ const onSelectSquare = function (event) {
     api.selectSquare(data)
       .done(ui.selectSquareSuccess)
       .fail(ui.selectSquareFailure);
+      if (app.game.over === true) {
+          let data = {
+              "game": {
+                "cell": {
+                  "index": [],
+                  "value": [],
+                },
+                "over": true
+              }
+            };
+            api.setWinner(data)
+              .done(ui.winnerLog);
+            setNavMessage("The game's already over, you should start a new one.");
+      } else {}
   } else if (app.game.over === true) {
-      let data = {
-          "game": {
-            "cell": {
-              "index": [],
-              "value": [],
-            },
-            "over": true
-          }
-        };
-      api.setWinner(data)
-        .done(ui.winnerLog);
+      // let data = {
+      //     "game": {
+      //       "cell": {
+      //         "index": [],
+      //         "value": [],
+      //       },
+      //       "over": true
+      //     }
+      //   };
+      // api.setWinner(data)
+      //   .done(ui.winnerLog);
+      ui.selectSquareFailure();
       setNavMessage("The game's already over, you should start a new one.");
   } else {
     ui.selectSquareFailure();
