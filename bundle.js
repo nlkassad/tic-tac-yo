@@ -409,7 +409,7 @@ webpackJsonp([0],[
 	  api.selectNewGame().done(ui.newGameSuccess).fail(ui.newGameFailure);
 	};
 
-	var onGetGameData = function onGetGameData() {
+	var onGetGameData = function onGetGameData(event) {
 	  event.preventDefault();
 	  api.getGameData().done(ui.getGameDataSuccess).fail(ui.getGameDataFailure);
 	};
