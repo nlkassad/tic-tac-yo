@@ -1,10 +1,10 @@
-Now This Is What I Call Tic-Tac-Toe 2016
+# Now This Is What I Call Tic-Tac-Toe 2016 V1.1
 
 Presented by General Assembly, Neural Shunt Media, and Github Pages.
 Now This Is What I Call Tic-Tac-Toe 2016 is a compilation of your
 favorite tic-tac-toe games and features of 2016.
 
-Available now at: [https://nlkassad.github.io/tic-tac-toe]
+[Available now at:] (https://nlkassad.github.io/tic-tac-toe)
 
 Now This Is What I Call Tic-Tac-Toe 2016 features code base from
 HTML, CSS, Sass, Javascript, jQuery, Ruby on Rails and code from
@@ -13,14 +13,15 @@ bottom of this document.
 
 A limited edition of the wireframe for this release is available on
 Google Drive and it showcases all of the advanced functionality
-available in Google Draw:
-[https://docs.google.com/drawings/d/1ArvG36f3ywk9l-jYaZ3Gyca-AXdccFCqmJMelYxXme0/edit]
+available in [Google Draw:]
+(https://docs.google.com/drawings/d/1ArvG36f3ywk9l-jYaZ3Gyca-AXdccFCqmJMelYxXme0/edit)
 Project planning was done in Trello, access is currently only
-available to members of the Now This Is What I Call Tic-Tac-Toe VIP
-fan club
-[https://trello.com/b/wZzvEVFT/tic-tac-toe]
+available to members of the [Now This Is What I Call Tic-Tac-Toe VIP fan club] (https://trello.com/b/wZzvEVFT/tic-tac-toe)
+[Additional Documentation:] (https://github.com/ga-wdi-boston/game-project-scope-study/pull/53/commits/0cd35da1569c93e777488f5871ca4293da579b08)
+[Google duplicate of planning document:]
+(https://docs.google.com/document/d/1vHSNm61B3o0WpoXQqYkl7sH6eSFEMAp1iBPm8_fvb2c/edit?usp=sharing)
 
-Project Planning outline
+## Project Planning outline
 Rough wireframe
 Data structure outline - list of key features to meet requirements
 Initial design in HTML
@@ -37,7 +38,7 @@ Add notifications for users
 Correct horrible problems with win checker
 Clean up messy messy code
 
-Problem solving and major issues:
+## Problem solving and major issues:
 For most of this project I designed features by building a quick
 part of a feature ==> testing ==> looking for references for working
 models ==> updating ==> minimizing the test components ==> expanding
@@ -59,13 +60,18 @@ array. A major issue that I discovered and resolved was a step where
 arraz. the checker was returning the wrong value and combining the
 arrba. information from the index array too early.
 
-Unresolved issues:
+## Unresolved issues:
 Authentication layout - not centered, font sizes aren't a good fit.
-Center token markers on grid - currently they are positioned towards
-the top of their grids
 Add additional game reporting - Add win and loss totals for games-played
 Sign up and sign in as a single event - sign in requires two actions
 for a new user. combine these into a single action
 Add auth check for sign out event handler - does not check for
 credentials, add check to clear appropriate credentials for
 current user.
+
+## Fix log:
+Remove code from sign-up that causes view to change to the same view as
+signed-in.
+Add notification after sign-up to notify user to sign-in
+Center token markers on grid.
+Update to new visual design.
